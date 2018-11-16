@@ -4,8 +4,8 @@ COIN='GTM'
 COIN_TGZ='https://github.com/genterium-project/gentarium/releases/download/v1.2.0/ge-linux64.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_PATH='/usr/local/bin/'
-COIN_DAEMON=gentariumd
-COIN_CLI=gentarium-cli
+COIN_DAEMON='gentariumd'
+COIN_CLI='gentarium-cli'
 TEMP_BIN='/root/ge/bin'
 
 # get the zipped file from the gentarium github repository
@@ -21,7 +21,7 @@ echo -e "Stopping the $COIN deamon.........."
 systemctl stop $COIN.service && echo "Stopped"
 #remove old gentarium-cli wallet and gentariumd deamon from the system and return back to root folder
 echo -e "Remove old, and install new $COIN wallet files....."
-cd $COINPATH && sudo rm $COIN_CLI $COIN_DAEMON && cd
+cd $COIN_PATH && sudo rm $COIN_CLI $COIN_DAEMON && cd
 #copy new gentarium-cli wallet and gentariumd deamon to the system
 cd $TEMP_BIN && cp $COIN_DAEMON $COIN_CLI $COIN_PATH && cd
 #remove unzipped folder
