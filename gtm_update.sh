@@ -4,8 +4,8 @@ COIN='GTM'
 COIN_TGZ='https://github.com/genterium-project/gentarium/releases/download/v1.2.0/ge-linux64.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_PATH='/usr/local/bin/'
-COIN_DAEMON='gentariumd'
-COIN_CLI='gentarium-cli'
+COIN_DAEMON=gentariumd
+COIN_CLI=gentarium-cli
 TEMP_BIN='/root/ge/bin'
 
 # get the zipped file from the gentarium github repository
